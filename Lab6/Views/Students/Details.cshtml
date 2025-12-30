@@ -1,0 +1,50 @@
+﻿@model Lab6.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+
+        <div class="card shadow-sm border-0 fade-in">
+            <div class="card-header bg-info text-white fw-bold">
+                Student Details
+            </div>
+
+            <div class="card-body p-4">
+
+                <dl class="row mb-4">
+                    <dt class="col-sm-4 fw-semibold">Full Name</dt>
+                    <dd class="col-sm-8">@Model.FullName</dd>
+
+                    <dt class="col-sm-4 fw-semibold">Student Number</dt>
+                    <dd class="col-sm-8">@Model.StudentNumber</dd>
+
+                    <dt class="col-sm-4 fw-semibold">Email</dt>
+                    <dd class="col-sm-8">@Model.Email</dd>
+
+                    <dt class="col-sm-4 fw-semibold">Program</dt>
+                    <dd class="col-sm-8">
+                        <span class="badge bg-primary">
+                            @Model.Program
+                        </span>
+                    </dd>
+                </dl>
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        ← Back
+                    </a>
+
+                    <a asp-action="Edit" asp-route-id="@Model.Id"
+                       class="btn btn-info text-white px-4">
+                        Edit Student
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
